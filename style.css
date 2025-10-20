@@ -1,0 +1,349 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: rgb(143, 3, 3);
+    height: 100vh; /* make sure body fills the screen */
+    display: flex;
+    flex-direction: column;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 10px;
+    flex: 1; /* pushes footer to the bottom */
+    align-items: center; /* vertically center sections */
+}
+
+/* NAVBAR */
+.navbar{
+    padding: 20px;
+    grid-column: 1/11;
+    background-color: rgb(0, 0, 0);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* keeps navbar above everything */
+}
+
+.navbar #menu{
+    display: none;
+}
+
+.navbar ul{
+    list-style-type: none;
+    display: flex;
+    float: right;
+    font-size: 40px;
+}
+
+.navbar #logo{
+    font-weight: bold;
+    font-size: 50px;
+    float: left;
+    transition: ease-in-out 0.5s;
+}
+
+.navbar li{
+    padding-inline: 20px;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: rgb(235, 235, 235);
+}
+
+/* IMAGE SECTION */
+.img-section{
+    grid-column: 1/4;
+    padding: 80px 0px 0px 80px;
+    text-align: center;
+    align-self: center; /* keeps image aligned with text section */
+}
+
+.img-section img{
+    width: 100%;
+    border-radius: 50%;
+    border: 3px solid black;
+    transition: ease-in-out 0.8s;
+}
+
+/* TEXT SECTION */
+.text-section{
+    grid-column: 4/11;
+    padding: 200px 0px 0px 0px;
+    text-align: center;
+    color: aliceblue;
+    align-self: center;
+}
+
+.text-section ul{
+    list-style-type: none;
+    font-size: 30px;
+}
+
+.text-section li:nth-child(1){
+    font-size: 40px;
+    font-weight: bold;
+}
+
+/* ===== ADDED QUOTE SECTION ===== */
+.quote{
+    grid-column: 1/11;
+    text-align: center;
+    color: white;
+    font-style: italic;
+    font-size: 25px;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+/* ===== ADDED FOOTER ===== */
+footer{
+    grid-column: 1/11;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 15px 0;
+    font-size: 18px;
+    margin-top: auto; /* keeps footer at bottom */
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1200px){
+    .navbar ul{
+        font-size: 35px;
+    }
+
+    .navbar #logo{
+        font-size: 45px;
+    }
+
+    .img-section{
+        padding: 50px 0px 0px 30px;
+    }
+
+    .img-section img{
+        width: 100%;
+    }
+
+    .text-section{
+        padding: 130px 0px 0px 0px;
+    }
+
+    .text-section ul{
+        font-size: 40px;
+    }
+
+    .text-section li:nth-child(1){
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 870px){
+    .navbar ul{
+        font-size: 30px;
+    }
+
+    .navbar #logo{
+        font-size: 30px;
+    }
+
+    .img-section{
+        padding: 50px 0px 0px 30px;
+    }
+
+    .img-section img{
+        width: 120%;
+    }
+
+    .text-section{
+        padding: 130px 0px 0px 0px;
+    }
+
+    .text-section ul{
+        font-size: 30px;
+    }
+
+    .text-section li:nth-child(1){
+        font-size: 40px;
+    }
+
+    .quote{
+        font-size: 20px;
+    }
+
+    footer{
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 704px){
+    .navbar ul{
+        font-size: 25px;
+    }
+
+    .img-section{
+        padding: 50px 0px 0px 30px;
+    }
+
+    .img-section img{
+        width: 120%;
+    }
+
+    .text-section{
+        padding: 130px 0px 0px 0px;
+    }
+
+    .text-section ul{
+        font-size: 20px;
+    }
+
+    .text-section li:nth-child(1){
+        font-size: 30px;
+    }
+
+    .quote{
+        font-size: 18px;
+    }
+
+    footer{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .navbar ul{
+        display: none;
+    }
+#menu {
+  font-size: 30px;          /* Makes the icon larger */
+  cursor: pointer;          /* Shows a hand cursor when hovering */
+  color: #333;              /* Dark gray color */
+  padding: 10px 15px;       /* Adds clickable space around */
+  border-radius: 8px;       /* Smooth rounded edges */
+  transition: all 0.3s ease; /* Smooth hover transition */
+}
+#menu:hover {
+  background-color: #f0f0f0; /* Light background on hover */
+  color: #007bff;            /* Change color to blue when hovered */
+  transform: scale(1.1);     /* Slight zoom-in effect */
+}
+
+/* Optional active (clicked) effect */
+#menu:active {
+  transform: scale(0.95);
+  color: #0056b3;
+}
+    .navbar #menu{
+        display: block;
+        float: right;
+        font-size: 30px;
+    }
+
+
+    .img-section{
+        grid-column: 1/11;
+        padding: 90px 0px 0px 0px;
+        text-align: center;
+    }
+
+    .img-section img{
+        width: 50%;
+    }
+
+    .text-section{
+        grid-column: 1/11;
+        padding: 30px 0px 0px 0px;
+    }
+
+    .text-section ul{
+        font-size: 20px;
+    }
+
+    .text-section li:nth-child(1){
+        font-size: 20px;
+    }
+
+    .quote{
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    footer{
+        font-size: 14px;
+        padding: 10px 0;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .navbar ul{
+        display: none;
+    }
+
+ #menu {
+  font-size: 30px;          /* Makes the icon larger */
+  cursor: pointer;          /* Shows a hand cursor when hovering */
+  color: #333;              /* Dark gray color */
+  padding: 10px 15px;       /* Adds clickable space around */
+  border-radius: 8px;       /* Smooth rounded edges */
+  transition: all 0.3s ease; /* Smooth hover transition */
+}
+
+/* Hover effect */
+#menu:hover {
+  background-color: #f0f0f0; /* Light background on hover */
+  color: #007bff;            /* Change color to blue when hovered */
+  transform: scale(1.1);     /* Slight zoom-in effect */
+}
+
+/* Optional active (clicked) effect */
+#menu:active {
+  transform: scale(0.95);
+  color: #0056b3;
+}
+
+    .img-section{
+        grid-column: 1/11;
+        padding: 90px 0px 0px 0px;
+        text-align: center;
+    }
+
+    .img-section img{
+        width: 50%;
+    }
+
+    .text-section{
+        grid-column: 1/11;
+        padding: 30px 0px 0px 0px;
+    }
+
+    .text-section ul{
+        font-size: 15px;
+    }
+
+    .text-section li:nth-child(1){
+        font-size: 30px;
+    }
+
+    .quote{
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    footer{
+        font-size: 14px;
+        padding: 10px 0;
+    }
+}
+@media screen and (min-width: 401px){
+    body{
+        overflow-x: hidden; /* Prevent horizontal scroll */
+    }
+}
+
