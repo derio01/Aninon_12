@@ -1,349 +1,370 @@
 *{
-    font-family: Arial, Helvetica, sans-serif;
+    html, body {
+    height: 70vh; 
+    overflow-x: hidden;
+}
     margin: 0px;
     padding: 0px;
 }
 
 body{
-    background-color: rgb(143, 3, 3);
-    height: 100vh; /* make sure body fills the screen */
-    display: flex;
-    flex-direction: column;
+    background-color: #9e0008;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .container{
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     gap: 10px;
-    flex: 1; /* pushes footer to the bottom */
     align-items: center; /* vertically center sections */
+    
 }
 
-/* NAVBAR */
 .navbar{
-    padding: 20px;
+    padding: 15px;
     grid-column: 1/11;
-    background-color: rgb(0, 0, 0);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10; /* keeps navbar above everything */
-}
+    background-color: #000000;
 
-.navbar #menu{
-    display: none;
-}
+    #menu{
+        display: none;
+    }
 
-.navbar ul{
+    ul{
     list-style-type: none;
     display: flex;
     float: right;
-    font-size: 40px;
-}
+    padding-top: 3px;
+    font-size: 25px;
+    margin-right: 0%;
+    }
 
-.navbar #logo{
+    #logo{
     font-weight: bold;
-    font-size: 50px;
+    font-size: 30px;
     float: left;
+     margin-left: 2%;
     transition: ease-in-out 0.5s;
 }
 
-.navbar li{
+    li{
     padding-inline: 20px;
 }
 
-.navbar a{
+    a{
     text-decoration: none;
     color: rgb(235, 235, 235);
 }
 
-/* IMAGE SECTION */
+}
+
 .img-section{
     grid-column: 1/4;
-    padding: 80px 0px 0px 80px;
+    padding: 60px 0px 45px 120px;
     text-align: center;
-    align-self: center; /* keeps image aligned with text section */
+    img{
+        width: 120%;
+        border-radius: 50%;
+        transition: ease-in-out 0.8s;
+    }
+     img:hover {
+        transform: scale(1.05);
+        filter: brightness(1.1);
+        cursor: pointer; 
 }
-
-.img-section img{
-    width: 100%;
-    border-radius: 50%;
-    border: 3px solid black;
-    transition: ease-in-out 0.8s;
 }
-
-/* TEXT SECTION */
 .text-section{
     grid-column: 4/11;
-    padding: 200px 0px 0px 0px;
-    text-align: center;
-    color: aliceblue;
-    align-self: center;
-}
+    padding: 150px 0px 45px 260px;
+    color: rgb(0, 0, 0);
 
-.text-section ul{
-    list-style-type: none;
-    font-size: 30px;
-}
-
-.text-section li:nth-child(1){
-    font-size: 40px;
-    font-weight: bold;
-}
-
-/* ===== ADDED QUOTE SECTION ===== */
-.quote{
-    grid-column: 1/11;
-    text-align: center;
-    color: white;
-    font-style: italic;
-    font-size: 25px;
-    margin-top: 50px;
-    padding: 20px;
-}
-
-/* ===== ADDED FOOTER ===== */
-footer{
-    grid-column: 1/11;
-    text-align: center;
-    background-color: black;
-    color: white;
-    padding: 15px 0;
-    font-size: 18px;
-    margin-top: auto; /* keeps footer at bottom */
-}
-
-/* MEDIA QUERIES */
-@media screen and (max-width: 1200px){
-    .navbar ul{
+    ul{
+        list-style-type: none;
         font-size: 35px;
     }
 
-    .navbar #logo{
-        font-size: 45px;
+    li:nth-child(4){
+        font-family: 'Vollkorn', serif; 
+        padding: 80px 0px 0px 0px;
+    }
+}
+
+.footer{
+    grid-column: 1/11;
+    background-color: #000000;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-family: 'Vollkorn SC', sans-serif;
+    font-size: 15px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+@media screen and (max-width: 1200px){
+    
+    .navbar{
+        ul{
+            font-size: 25px;
+        }
+
+        li{
+            padding-inline: 20px;
+        }
+
+        #logo{
+            font-size: 35px;
+        }
     }
 
     .img-section{
-        padding: 50px 0px 0px 30px;
+    padding: 80px 0px 0px 50px;
+    img{
+        width: 110%;
+    }
     }
 
-    .img-section img{
+    .text-section{
+        padding: 120px 0px 0px 150px;
+        ul{
+            font-size: 30px;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px){
+    
+    .navbar{
+        ul{
+            font-size: 25px;
+        }
+
+        li{
+            padding-inline: 13px;
+        }
+
+        #logo{
+            font-size: 32px;
+        }
+    }
+
+    .img-section{
+    padding: 100px 0px 0px 50px;
+    img{
         width: 100%;
     }
-
-    .text-section{
-        padding: 130px 0px 0px 0px;
-    }
-
-    .text-section ul{
-        font-size: 40px;
-    }
-
-    .text-section li:nth-child(1){
-        font-size: 50px;
-    }
-}
-
-@media screen and (max-width: 870px){
-    .navbar ul{
-        font-size: 30px;
-    }
-
-    .navbar #logo{
-        font-size: 30px;
-    }
-
-    .img-section{
-        padding: 50px 0px 0px 30px;
-    }
-
-    .img-section img{
-        width: 120%;
     }
 
     .text-section{
-        padding: 130px 0px 0px 0px;
-    }
-
-    .text-section ul{
-        font-size: 30px;
-    }
-
-    .text-section li:nth-child(1){
-        font-size: 40px;
-    }
-
-    .quote{
-        font-size: 20px;
-    }
-
-    footer{
-        font-size: 16px;
+        padding: 120px 0px 0px 100px;
+        ul{
+            font-size: 30px;
+        }
     }
 }
 
-@media screen and (max-width: 704px){
-    .navbar ul{
-        font-size: 25px;
+@media screen and (max-width: 900px){
+    
+    .navbar{
+        ul{
+            font-size: 23px;
+        }
+
+        li{
+            padding-inline: 10px;
+        }
+
+        #logo{
+            padding: 0px 0px 0px 20px;
+            font-size: 30px;
+        }
     }
 
     .img-section{
-        padding: 50px 0px 0px 30px;
+    padding: 110px 0px 0px 50px;
+    img{
+        width: 110%;
     }
-
-    .img-section img{
-        width: 120%;
     }
 
     .text-section{
-        padding: 130px 0px 0px 0px;
+        padding: 120px 0px 0px 80px;
+        ul{
+            font-size: 25px;
+        }
     }
 
-    .text-section ul{
-        font-size: 20px;
-    }
-
-    .text-section li:nth-child(1){
-        font-size: 30px;
-    }
-
-    .quote{
-        font-size: 18px;
-    }
-
-    footer{
-        font-size: 15px;
+    .footer{
+        font-size: 13px;
+        border-color: #000000;
     }
 }
 
-@media screen and (max-width: 600px){
-    .navbar ul{
-        display: none;
-    }
-#menu {
-  font-size: 30px;          /* Makes the icon larger */
-  cursor: pointer;          /* Shows a hand cursor when hovering */
-  color: #333;              /* Dark gray color */
-  padding: 10px 15px;       /* Adds clickable space around */
-  border-radius: 8px;       /* Smooth rounded edges */
-  transition: all 0.3s ease; /* Smooth hover transition */
-}
-#menu:hover {
-  background-color: #f0f0f0; /* Light background on hover */
-  color: #007bff;            /* Change color to blue when hovered */
-  transform: scale(1.1);     /* Slight zoom-in effect */
-}
+@media screen and (max-width: 760px){
+    
+    .navbar{
+        ul{
+            display: none;
+        }
 
-/* Optional active (clicked) effect */
-#menu:active {
-  transform: scale(0.95);
-  color: #0056b3;
-}
-    .navbar #menu{
-        display: block;
-        float: right;
-        font-size: 30px;
-    }
+        #menu{
+            display: block;
+            color: white;
+            float: right;
+            font-size: 20px;
+        }
 
+        #logo{
+            padding: 0px 0px 0px 10px;
+            font-size: 30px;
+        }
+    }
 
     .img-section{
+    grid-column: 1/11;
+    padding: 10px;
+    img{
+        width: 30%;
+    }
+    }
+
+    .text-section{
         grid-column: 1/11;
-        padding: 90px 0px 0px 0px;
-        text-align: center;
+        padding: 5px 0px 0px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ul{
+            font-size: 28px;
+        }
+    }
+}
+
+@media screen and (max-width: 550px){
+    
+    .navbar{
+        ul{
+            display: none;
+        }
+
+        #menu{
+            display: block;
+            color: white;
+            float: right;
+            font-size: 20px;
+        }
+
+        #logo{
+            padding: 0px 0px 0px 10px;
+            font-size: 30px;
+        }
     }
 
-    .img-section img{
+    .img-section{
+    grid-column: 1/11;
+    padding: 10px;
+    img{
+        width: 40%;
+    }
+    }
+
+    .text-section{
+        grid-column: 1/11;
+        padding: 10px 0px 0px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ul{
+            font-size: 22px;
+        }
+    }
+}
+
+@media screen and (max-width: 450px){
+    
+    .navbar{
+        ul{
+            display: none;
+        }
+
+        #menu{
+            display: block;
+            color: white;
+            float: right;
+            font-size: 20px;
+        }
+
+        #logo{
+            padding: 0px;
+            font-size: 25px;
+        }
+    }
+
+    .img-section{
+    grid-column: 1/11;
+    padding: 10px;
+    img{
         width: 50%;
     }
+    }
 
     .text-section{
         grid-column: 1/11;
-        padding: 30px 0px 0px 0px;
+        padding: 10px 0px 0px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ul{
+            font-size: 21px;
+        }
     }
 
-    .text-section ul{
-        font-size: 20px;
-    }
-
-    .text-section li:nth-child(1){
-        font-size: 20px;
-    }
-
-    .quote{
-        font-size: 16px;
-        padding: 10px;
-    }
-
-    footer{
-        font-size: 14px;
-        padding: 10px 0;
+    .footer{
+        font-size: 12px
     }
 }
 
-@media screen and (max-width: 400px){
-    .navbar ul{
-        display: none;
+@media screen and (max-width: 380px){
+    
+    .navbar{
+        ul{
+            display: none;
+        }
+
+        #menu{
+            display: block;
+            color: white;
+            float: right;
+            font-size: 20px;
+        }
+
+        #logo{
+            padding: 0px;
+            font-size: 22px;
+        }
     }
-
- #menu {
-  font-size: 30px;          /* Makes the icon larger */
-  cursor: pointer;          /* Shows a hand cursor when hovering */
-  color: #333;              /* Dark gray color */
-  padding: 10px 15px;       /* Adds clickable space around */
-  border-radius: 8px;       /* Smooth rounded edges */
-  transition: all 0.3s ease; /* Smooth hover transition */
-}
-
-/* Hover effect */
-#menu:hover {
-  background-color: #f0f0f0; /* Light background on hover */
-  color: #007bff;            /* Change color to blue when hovered */
-  transform: scale(1.1);     /* Slight zoom-in effect */
-}
-
-/* Optional active (clicked) effect */
-#menu:active {
-  transform: scale(0.95);
-  color: #0056b3;
-}
 
     .img-section{
-        grid-column: 1/11;
-        padding: 90px 0px 0px 0px;
-        text-align: center;
-    }
-
-    .img-section img{
+    grid-column: 1/11;
+    padding: 20px 0px 0px 0px;
+    img{
         width: 50%;
+    }
     }
 
     .text-section{
         grid-column: 1/11;
-        padding: 30px 0px 0px 0px;
+        padding: 50px 0px 0px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ul{
+            font-size: 17px;
+        }
     }
 
-    .text-section ul{
-        font-size: 15px;
-    }
-
-    .text-section li:nth-child(1){
-        font-size: 30px;
-    }
-
-    .quote{
-        font-size: 16px;
-        padding: 10px;
-    }
-
-    footer{
-        font-size: 14px;
-        padding: 10px 0;
+    .footer{
+        font-size: 10px
     }
 }
-@media screen and (min-width: 401px){
-    body{
-        overflow-x: hidden; /* Prevent horizontal scroll */
-    }
-}
-
