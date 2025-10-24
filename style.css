@@ -1,8 +1,8 @@
 *{
     html, body {
-    height: 70vh; 
-    overflow-x: hidden;
-}
+        height: 70vh; 
+        overflow-x: hidden;
+    }
     margin: 0px;
     padding: 0px;
 }
@@ -12,83 +12,89 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.container{
+.page-wrapper{
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     gap: 10px;
     align-items: center; /* vertically center sections */
-    
 }
 
-.navbar{
+.header-bar{
     padding: 15px;
     grid-column: 1/11;
     background-color: #000000;
 
-    #menu{
+    #menu-icon{
         display: none;
     }
 
-    ul{
-    list-style-type: none;
-    display: flex;
-    float: right;
-    padding-top: 3px;
-    font-size: 25px;
-    margin-right: 0%;
+    .nav-links{
+        list-style-type: none;
+        display: flex;
+        float: right;
+        padding-top: 3px;
+        font-size: 25px;
+        margin-right: 0%;
     }
 
-    #logo{
-    font-weight: bold;
-    font-size: 30px;
-    float: left;
-     margin-left: 2%;
-    transition: ease-in-out 0.5s;
-}
+    #site-logo{
+        font-weight: bold;
+        font-size: 30px;
+        float: left;
+        margin-left: 2%;
+        transition: ease-in-out 0.5s;
+    }
 
     li{
-    padding-inline: 20px;
-}
+        padding-inline: 20px;
+    }
 
     a{
-    text-decoration: none;
-    color: rgb(235, 235, 235);
+        text-decoration: none;
+        color: rgb(235, 235, 235);
+    }
 }
 
-}
-
-.img-section{
+.profile-image-section{
     grid-column: 1/4;
     padding: 60px 0px 45px 120px;
     text-align: center;
+    
     img{
         width: 120%;
         border-radius: 50%;
         transition: ease-in-out 0.8s;
     }
-     img:hover {
+
+    img:hover {
         transform: scale(1.05);
         filter: brightness(1.1);
         cursor: pointer; 
+    }
 }
-}
-.text-section{
+
+.intro-text-section{
     grid-column: 4/11;
     padding: 150px 0px 45px 260px;
     color: rgb(0, 0, 0);
 
-    ul{
+    .intro-list{
         list-style-type: none;
         font-size: 35px;
     }
 
+    li:nth-child(1){
+        font-family: 'Vollkorn', serif; 
+        padding: 80px 0px 0px 0px;
+        font-size: 150%;
+    }
     li:nth-child(4){
         font-family: 'Vollkorn', serif; 
         padding: 80px 0px 0px 0px;
     }
 }
 
-.footer{
+.page-footer{
     grid-column: 1/11;
     background-color: #000000;
     padding: 10px;
@@ -102,10 +108,11 @@ body{
     width: 100%;
 }
 
+/* --- RESPONSIVE DESIGN --- */
+
 @media screen and (max-width: 1200px){
-    
-    .navbar{
-        ul{
+    .header-bar{
+        .nav-links{
             font-size: 25px;
         }
 
@@ -113,30 +120,29 @@ body{
             padding-inline: 20px;
         }
 
-        #logo{
+        #site-logo{
             font-size: 35px;
         }
     }
 
-    .img-section{
-    padding: 80px 0px 0px 50px;
-    img{
-        width: 110%;
-    }
+    .profile-image-section{
+        padding: 80px 0px 0px 50px;
+        img{
+            width: 110%;
+        }
     }
 
-    .text-section{
+    .intro-text-section{
         padding: 120px 0px 0px 150px;
-        ul{
+        .intro-list{
             font-size: 30px;
         }
     }
 }
 
 @media screen and (max-width: 1000px){
-    
-    .navbar{
-        ul{
+    .header-bar{
+        .nav-links{
             font-size: 25px;
         }
 
@@ -144,30 +150,29 @@ body{
             padding-inline: 13px;
         }
 
-        #logo{
+        #site-logo{
             font-size: 32px;
         }
     }
 
-    .img-section{
-    padding: 100px 0px 0px 50px;
-    img{
-        width: 100%;
-    }
+    .profile-image-section{
+        padding: 100px 0px 0px 50px;
+        img{
+            width: 100%;
+        }
     }
 
-    .text-section{
+    .intro-text-section{
         padding: 120px 0px 0px 100px;
-        ul{
+        .intro-list{
             font-size: 30px;
         }
     }
 }
 
 @media screen and (max-width: 900px){
-    
-    .navbar{
-        ul{
+    .header-bar{
+        .nav-links{
             font-size: 23px;
         }
 
@@ -175,196 +180,207 @@ body{
             padding-inline: 10px;
         }
 
-        #logo{
+        #site-logo{
             padding: 0px 0px 0px 20px;
             font-size: 30px;
         }
     }
 
-    .img-section{
-    padding: 110px 0px 0px 50px;
-    img{
-        width: 110%;
-    }
+    .profile-image-section{
+        padding: 110px 0px 0px 50px;
+        img{
+            width: 110%;
+        }
     }
 
-    .text-section{
+    .intro-text-section{
         padding: 120px 0px 0px 80px;
-        ul{
+        .intro-list{
             font-size: 25px;
         }
     }
 
-    .footer{
+    .page-footer{
         font-size: 13px;
         border-color: #000000;
     }
 }
 
 @media screen and (max-width: 760px){
-    
-    .navbar{
-        ul{
+    .header-bar{
+        .nav-links{
             display: none;
         }
 
-        #menu{
+        #menu-icon{
             display: block;
             color: white;
             float: right;
             font-size: 20px;
         }
 
-        #logo{
+        #site-logo{
             padding: 0px 0px 0px 10px;
             font-size: 30px;
         }
     }
 
-    .img-section{
-    grid-column: 1/11;
-    padding: 10px;
-    img{
-        width: 30%;
-    }
+    .profile-image-section{
+        grid-column: 1/11;
+        padding: 10px;
+        img{
+            width: 30%;
+        }
     }
 
-    .text-section{
+    .intro-text-section{
         grid-column: 1/11;
-        padding: 5px 0px 0px 0px;
+        padding: 0px;
         display: flex;
         justify-content: center;
         align-items: center;
-        ul{
+
+        .intro-list{
             font-size: 28px;
         }
+         li:nth-child(1){
+        font-family: 'Vollkorn', serif; 
+        padding: 10px 0px 0px 0px;
+         }
+        li:nth-child(4){
+        font-family: 'Vollkorn', serif; 
+        padding: 80px 0px 0px 0px;
+    }
     }
 }
 
 @media screen and (max-width: 550px){
-    
-    .navbar{
-        ul{
+    .header-bar{
+        .nav-links{
             display: none;
         }
 
-        #menu{
+        #menu-icon{
             display: block;
             color: white;
             float: right;
             font-size: 20px;
         }
 
-        #logo{
-            padding: 0px 0px 0px 10px;
+        #site-logo{
+            padding: -4px 0px 0px 10px;
             font-size: 30px;
         }
     }
 
-    .img-section{
-    grid-column: 1/11;
-    padding: 10px;
-    img{
-        width: 40%;
-    }
+    .profile-image-section{
+        grid-column: 1/11;
+        padding: 10px;
+        img{
+            width: 40%;
+        }
     }
 
-    .text-section{
+    .intro-text-section{
         grid-column: 1/11;
         padding: 10px 0px 0px 0px;
         display: flex;
         justify-content: center;
         align-items: center;
-        ul{
+
+        .intro-list{
             font-size: 22px;
         }
+         li:nth-child(4){
+        font-family: 'Vollkorn', serif; 
+        padding: 50px 0px 0px 0px;
     }
 }
 
 @media screen and (max-width: 450px){
-    
-    .navbar{
-        ul{
+    .header-bar{
+        .nav-links{
             display: none;
         }
 
-        #menu{
+        #menu-icon{
             display: block;
             color: white;
             float: right;
             font-size: 20px;
         }
 
-        #logo{
+        #site-logo{
             padding: 0px;
             font-size: 25px;
         }
     }
 
-    .img-section{
-    grid-column: 1/11;
-    padding: 10px;
-    img{
-        width: 50%;
-    }
+    .profile-image-section{
+        grid-column: 1/11;
+        padding: 10px;
+        img{
+            width: 50%;
+        }
     }
 
-    .text-section{
+    .intro-text-section{
         grid-column: 1/11;
-        padding: 10px 0px 0px 0px;
+        padding: 5px 0px 0px 0px;
         display: flex;
         justify-content: center;
         align-items: center;
-        ul{
+
+        .intro-list{
             font-size: 21px;
         }
     }
 
-    .footer{
-        font-size: 12px
+    .page-footer{
+        font-size: 12px;
     }
 }
 
 @media screen and (max-width: 380px){
-    
-    .navbar{
-        ul{
+    .header-bar{
+        .nav-links{
             display: none;
         }
 
-        #menu{
+        #menu-icon{
             display: block;
             color: white;
             float: right;
             font-size: 20px;
         }
 
-        #logo{
+        #site-logo{
             padding: 0px;
             font-size: 22px;
         }
     }
 
-    .img-section{
-    grid-column: 1/11;
-    padding: 20px 0px 0px 0px;
-    img{
-        width: 50%;
-    }
+    .profile-image-section{
+        grid-column: 1/11;
+        padding: 30px 0px 0px 0px;
+        img{
+            width: 60%;
+        }
     }
 
-    .text-section{
+    .intro-text-section{
         grid-column: 1/11;
-        padding: 50px 0px 0px 0px;
+        padding: 10px 0px 0px 0px;
         display: flex;
         justify-content: center;
         align-items: center;
-        ul{
+
+        .intro-list{
             font-size: 17px;
         }
     }
 
-    .footer{
-        font-size: 10px
+    .page-footer{
+        font-size: 10px;
     }
 }
