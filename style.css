@@ -16,7 +16,7 @@ body{
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     gap: 10px;
-    align-items: center; /* vertically center sections */
+    align-items: center; 
 }
 
 .header-bar{
@@ -75,8 +75,9 @@ body{
 
 .intro-text-section{
     grid-column: 4/11;
-    padding: 150px 0px 45px 260px;
+    padding: 10px 100px 55px 260px;
     color: rgb(0, 0, 0);
+     font-family: 'Vollkorn', serif;
 
     .intro-list{
         list-style-type: none;
@@ -94,6 +95,52 @@ body{
     }
 }
 
+.contact-text-section {
+
+     grid-column: 4/11;
+    padding: 10px 100px 55px 260px;
+    color: rgb(0, 0, 0);
+     font-family: 'Vollkorn', serif;
+
+
+    .contact-list{
+        list-style-type: none;
+        font-size: 25px;
+    }
+
+    li:nth-child(1){
+        font-family: 'Vollkorn', serif; 
+        padding: 80px 0px 0px 0px;
+        font-size: 150%;
+    }
+    li:nth-child(4){
+        font-family: 'Vollkorn', serif; 
+        padding: 80px 0px 0px 0px;
+    }
+}
+.about-text-section {
+
+     grid-column: 4/11;
+    padding: 10px 100px 55px 260px;
+    color: rgb(0, 0, 0);
+     font-family: 'Vollkorn', serif;
+
+
+    .about-list{
+        list-style-type: none;
+        font-size: 25px;
+    }
+
+    li:nth-child(1){
+        font-family: 'Vollkorn', serif; 
+        padding: 80px 0px 0px 0px;
+        font-size: 150%;
+    }
+    li:nth-child(4){
+        font-family: 'Vollkorn', serif; 
+        padding: 80px 0px 0px 0px;
+    }
+}
 .page-footer{
     grid-column: 1/11;
     background-color: #000000;
@@ -108,10 +155,11 @@ body{
     width: 100%;
 }
 
-/* --- RESPONSIVE DESIGN --- */
+
 
 @media screen and (max-width: 1200px){
     .header-bar{
+
         .nav-links{
             font-size: 25px;
         }
@@ -133,10 +181,37 @@ body{
     }
 
     .intro-text-section{
-        padding: 120px 0px 0px 150px;
+        padding: 10px 0px 0px 150px;
         .intro-list{
             font-size: 30px;
         }
+        
+    }
+
+    .contact-text-section{
+        padding: 10px 0px 0px 150px;
+       
+        .contact-list{
+            font-size: 30px;
+        }
+    }
+    .about-text-section{
+        padding: 50px 0px 0px 150px;
+        .about-list{
+            font-size: 25px;
+        }
+        li:nth-child(1){
+        font-family: 'Vollkorn', serif; 
+        padding: 100px 0px 0px 0px;
+    }
+        li:nth-child(2){
+        font-family: 'Vollkorn', serif; 
+        padding: 0px 0px 0px 0px;
+    }
+        li:nth-child(3){
+        font-family: 'Vollkorn', serif; 
+        padding: 0px 0px 0px 0px;
+    }
     }
 }
 
@@ -167,6 +242,30 @@ body{
         .intro-list{
             font-size: 30px;
         }
+    }
+    .contact-text-section{
+        padding: 10px 0px 0px 150px;
+        .contact-list{
+            font-size: 30px;
+        }
+    }
+    .about-text-section{
+        padding: 50px 0px 0px 150px;
+        .about-list{
+            font-size: 25px;
+        }
+        li:nth-child(1){
+        font-family: 'Vollkorn', serif; 
+        padding: 100px 0px 0px 0px;
+    }
+        li:nth-child(2){
+        font-family: 'Vollkorn', serif; 
+        padding: 0px 0px 0px 0px;
+    }
+        li:nth-child(3){
+        font-family: 'Vollkorn', serif; 
+        padding: 0px 0px 0px 0px;
+    }
     }
 }
 
@@ -199,7 +298,18 @@ body{
             font-size: 25px;
         }
     }
-
+.contact-text-section{
+        padding: 10px 0px 0px 150px;
+        .contact-list{
+            font-size: 25px;
+        }
+    }
+    .about-text-section{
+        padding: 50px 100px 0px 150px;
+        .about-list{
+            font-size:20px;
+        }
+    }
     .page-footer{
         font-size: 13px;
         border-color: #000000;
@@ -208,15 +318,31 @@ body{
 
 @media screen and (max-width: 760px){
     .header-bar{
-        .nav-links{
+      
+        .nav-links {
             display: none;
+            flex-direction: column;
+            background: hsl(0, 0%, 0%);
+            position: absolute;
+            top: 65px;
+            right: 0px;
+            border-radius: 10px;
+            width: 150px;
+            padding: 0px 0;
+            text-align: center;
         }
 
+       
+        .nav-links.show {
+            display: flex;
+            font-size: 13px;
+        }
         #menu-icon{
             display: block;
             color: white;
             float: right;
             font-size: 20px;
+             cursor: pointer;
         }
 
         #site-logo{
@@ -252,135 +378,312 @@ body{
         padding: 80px 0px 0px 0px;
     }
     }
+
+  .contact-text-section{
+        grid-column: 1/11;
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .contact-list{
+            font-size: 20px;
+        }
+         li:nth-child(1){
+        font-family: 'Vollkorn', serif; 
+        padding: 100px 0px 0px 0px;
+         }
+        li:nth-child(4){
+        font-family: 'Vollkorn', serif; 
+        padding: 80px 0px 0px 0px;
+    }
+    }
+    .about-text-section{
+        grid-column: 1/11;
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .about-list{
+            font-size: 20px;
+        }
+         li:nth-child(1){
+        font-family: 'Vollkorn', serif; 
+        padding: 100px 0px 0px 0px;
+         }
+        li:nth-child(4){
+        font-family: 'Vollkorn', serif; 
+        padding: 80px 0px 0px 0px;
+    }
+    }
 }
 
-@media screen and (max-width: 550px){
-    .header-bar{
-        .nav-links{
+@media screen and (max-width: 550px) {
+    .header-bar {
+       
+        .nav-links {
             display: none;
+            flex-direction: column;
+            background: hsl(0, 0%, 0%);
+            position: absolute;
+            top: 65px;
+            right: 0px;
+            border-radius: 10px;
+            width: 150px;
+            padding: 0px 0;
+            text-align: center;
         }
 
-        #menu-icon{
+      
+        .nav-links.show {
+            display: flex;
+            font-size: 13px;
+        }
+
+        #menu-icon {
             display: block;
             color: white;
             float: right;
             font-size: 20px;
+            cursor: pointer;
         }
 
-        #site-logo{
+        #site-logo {
             padding: -4px 0px 0px 10px;
             font-size: 30px;
         }
     }
 
-    .profile-image-section{
+    .profile-image-section {
         grid-column: 1/11;
         padding: 10px;
-        img{
+
+        img {
             width: 40%;
         }
     }
 
-    .intro-text-section{
+    .intro-text-section {
         grid-column: 1/11;
         padding: 10px 0px 0px 0px;
         display: flex;
         justify-content: center;
         align-items: center;
 
-        .intro-list{
+        .intro-list {
             font-size: 22px;
         }
-         li:nth-child(4){
-        font-family: 'Vollkorn', serif; 
-        padding: 50px 0px 0px 0px;
+
+        li:nth-child(1) {
+            font-family: 'Vollkorn', serif; 
+            padding: 50px 0px 0px 0px;
+        }
+    }
+    .contact-text-section {
+        grid-column: 1/11;
+        padding: 10px 0px 0px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .contact-list {
+            font-size: 22px;
+        }
+
+        li:nth-child(4) {
+            font-family: 'Vollkorn', serif; 
+            padding: 50px 0px 0px 0px;
+        }
+    }
+    .about-text-section {
+        grid-column: 1/11;
+        padding: 10px 0px 0px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .about-list {
+            font-size: 22px;
+        }
+ li:nth-child(1) {
+            font-family: 'Vollkorn', serif; 
+            padding: 50px 0px 0px 0px;
+        }
+       
     }
 }
 
-@media screen and (max-width: 450px){
-    .header-bar{
-        .nav-links{
+@media screen and (max-width: 450px) {
+    .header-bar {
+      
+       .nav-links {
             display: none;
+            flex-direction: column;
+            background: hsl(0, 0%, 0%);
+            position: absolute;
+            top: 60px;
+            right: 0px;
+            border-radius: 10px;
+            width: 160px;
+            padding: 0px 0;
+            text-align: center;
         }
 
-        #menu-icon{
+       
+        .nav-links.show {
+            display: flex;
+            font-size: 11px;
+        }
+
+
+        #menu-icon {
             display: block;
             color: white;
             float: right;
             font-size: 20px;
+             cursor: pointer;
         }
 
-        #site-logo{
+        #site-logo {
             padding: 0px;
             font-size: 25px;
         }
     }
 
-    .profile-image-section{
+    .profile-image-section {
         grid-column: 1/11;
         padding: 10px;
-        img{
+
+        img {
             width: 50%;
         }
     }
 
-    .intro-text-section{
+    .intro-text-section {
         grid-column: 1/11;
         padding: 5px 0px 0px 0px;
         display: flex;
         justify-content: center;
         align-items: center;
 
-        .intro-list{
+        .intro-list {
             font-size: 21px;
         }
     }
+    .contact-text-section {
+        grid-column: 1/11;
+        padding: 5px 0px 0px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-    .page-footer{
+        .contact-list {
+            font-size: 21px;
+        }
+    }
+    .about-text-section {
+        grid-column: 1/11;
+        padding: 0px 0px 0px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .about-list {
+            font-size: 21px;
+        }
+         li:nth-child(1) {
+            font-family: 'Vollkorn', serif; 
+            padding: 50px 0px 0px 0px;
+        }
+    }
+
+    .page-footer {
         font-size: 12px;
     }
 }
 
-@media screen and (max-width: 380px){
-    .header-bar{
-        .nav-links{
+@media screen and (max-width: 380px) {
+    .header-bar {
+       .nav-links {
             display: none;
+            flex-direction: column;
+            background: hsl(0, 0%, 0%);
+            position: absolute;
+            top: 58px;
+            right: 0px;
+            border-radius: 10px;
+            width: 100px;
+            padding: 0px 0;
+            text-align: center;
         }
 
-        #menu-icon{
+       
+        .nav-links.show {
+            display: flex;
+            font-size: 10px;
+        }
+
+
+        #menu-icon {
             display: block;
             color: white;
             float: right;
             font-size: 20px;
+             cursor: pointer;
         }
 
-        #site-logo{
+        #site-logo {
             padding: 0px;
             font-size: 22px;
         }
     }
 
-    .profile-image-section{
+    .profile-image-section {
         grid-column: 1/11;
         padding: 30px 0px 0px 0px;
-        img{
+
+        img {
             width: 60%;
         }
     }
 
-    .intro-text-section{
+    .intro-text-section {
         grid-column: 1/11;
         padding: 10px 0px 0px 0px;
         display: flex;
         justify-content: center;
         align-items: center;
 
-        .intro-list{
+        .intro-list {
+            font-size: 17px;
+        }
+    }
+    .about-text-section {
+        grid-column: 1/11;
+        padding: 0px 0px 0px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+
+        .about-list {
+            font-size: 17px;
+        }
+    }
+    .contact-text-section {
+        grid-column: 1/11;
+        padding: 10px 0px 0px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .contact-list {
             font-size: 17px;
         }
     }
 
-    .page-footer{
+    .page-footer {
         font-size: 10px;
     }
 }
